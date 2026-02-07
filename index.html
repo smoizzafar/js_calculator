@@ -45,7 +45,11 @@
             return x * y;
         }
         function divide(x, y) {
-            return x / y;
+            if (y === 0) {
+                return 'dont fcuk with me'
+            } else {
+                return x / y;
+            }
         }
 
         let num1;
