@@ -219,12 +219,12 @@
 
         let clearButtonClicked = document.getElementById('clear');
         clearButtonClicked.addEventListener('click', function(){
+            displayBoxContent.textContent = '';
             num1 = undefined;
-            num2 = '';
+            num2 = undefined;
+            operator = '';
             currentContent = '';
             result = '';
-            displayBoxContent.textContent = '';
-            
         })
 
     </script>
