@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(80, 80, 80);
+        }
+    </style>
+</head>
+<body>
+    <div id="display">
+        <p id="displayedContent">000</p>
+    </div>
+    <button class="digit" id="five">5</button>
+    <button class="digit" id="four">4</button>
+    <button class="digit" id="three">3</button>
+    <button id="plus">+</button>
+    <button class="operator" data-op="subtract">-</button>
+    <button class="operator" data-op="multiply">x</button>
+    <button class="operator" data-op="divide">/</button>
+    <button>=</button>
+
+    <script>
+        num1=undefined;
+        num2=undefined;
+        memory ='';
+        result=undefined;
+
+        let display = document.getElementById('displayedContent');
+
+        let digitButtons = document.querySelectorAll('.digit');
+        digitButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                let digitPressed = button.textContent;
+                memory = memory + digitPressed;
+                display.textContent = memory;
+            });
+        });
+
+        
+
+        
+        function add(x, y) {
+            return x + y;
+        }
+        function subtract(x, y) {
+            return x - y;
+        }
+        function multiply(x, y) {
+            return x * y;
+        }
+        function divide(x, y) {
+            return x/y;
+        }
+         function operate(operator, num1, num2){
+            if (operator == "add") {
+                return add(num1, num2);
+            } else if (operator === "subtract") {
+                return subtract(num1, num2);
+            }
+            else if (operator === "multiply") {
+                return multiply(num1, num2);
+            } else if (operator === "divide") {
+                return divide(num1, num2);
+            }   
+        }
+
+        let plusButtonClicked = document.getElementById("plus");
+        plusButtonClicked.addEventListener('click', function(){
+            if (memory) {
+                num1 = Number(currentContent);
+                displayBoxContent.textContent = '+';
+                currentContent = '';
+                operator = 'add';
+            }});
+
+
+    </script>
+</body>
+</html>
